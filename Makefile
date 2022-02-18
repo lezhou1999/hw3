@@ -1,5 +1,5 @@
 all:
-	g++ -Wall TimeCode.cpp TimeCOdeTests.cpp -o tc
+	g++ -Wall TimeCode.cpp TimeCodeTests.cpp -o tc
 
 run:
 	./tc
