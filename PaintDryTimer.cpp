@@ -209,12 +209,13 @@ int main(){
 				cout<< drying_snap_shot_to_string(toStore.at(i))<<  tc.ToString()  <<endl;
 				
 				count++;
+					}
 						
 					
 
 			
 				cout << count <<" items being tracked"<<endl;
-				}
+				
 
 
 			
