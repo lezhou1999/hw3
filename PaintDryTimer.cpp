@@ -185,6 +185,7 @@ int main(){
 			
 			for(vector<DryingSnapShot>::size_type i=0; i<toStore.size();i++){
 				long long int currRemain = get_time_remaining(toStore.at(i));
+					if(currRemain >=0){
 					unsigned long long int time = floor(currRemain);
 					int h = time/3600;
 					int m = time % 3600/60;
@@ -195,6 +196,7 @@ int main(){
 				cout<< drying_snap_shot_to_string(toStore.at(i))<<  tc.ToString()  <<endl;
 				
 				count++;
+					}
 
 			}
 			cout << count <<"items  being tracked"<<endl;
@@ -203,10 +205,18 @@ int main(){
 			//long long int remainTime = get_time_remaining(newdss);
 		}
 
+				
+				
+
+			
 
 
 	}
-
+	while(toStore.size()!=0){
+		int i = int(toStore.size()-1);
+		delete toStore.at(i).timeToDry;
+		toStore.pop_back();
+	}
 
 	return 0;
 }
