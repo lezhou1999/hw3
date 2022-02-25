@@ -11,7 +11,7 @@ using namespace std;
 
 TimeCode::TimeCode(unsigned int hr, unsigned int min, long long unsigned int sec){
 
-    this->t=hr*3600+min*60+sec;
+    this->t=ComponentsToSeconds(hr,min,sec);
 
 
 
@@ -29,15 +29,12 @@ TimeCode::TimeCode(const TimeCode& tc){
 
 
 void TimeCode::SetHours(unsigned int hours){
-    if(hours>=24){
-         throw invalid_argument("the input is invalid, input is:" + hours);
-    }
-    else{
+    
     
         unsigned int restTime;
         restTime = this->t-3600*GetHours();
         this->t = restTime+3600*hours;
-    }
+    
         
 
     
