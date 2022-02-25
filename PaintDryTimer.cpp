@@ -129,7 +129,7 @@ int main(){
 	
 	bool runing = true;
 	vector<DryingSnapShot> toStore;
-	vector<TimeCode*> StoreTimeCode;
+	//vector<TimeCode*> StoreTimeCode;
 	while(runing){
 		for(vector<DryingSnapShot>::size_type i=0; i<toStore.size();i++){
 			long long int currentTime = get_time_remaining(toStore.at(i));
@@ -138,7 +138,7 @@ int main(){
 			if(currentTime<=0){
 
 			toStore.erase(toStore.begin()+i);
-			StoreTimeCode.erase(StoreTimeCode.begin()+i);
+			//StoreTimeCode.erase(StoreTimeCode.begin()+i);
 			
 
 			}
@@ -171,16 +171,16 @@ int main(){
 			newdss.timeToDry = tcPointer;
 			cout<<" will dry in:" <<tc.ToString()<<endl;			
 			toStore.push_back(newdss);
-			StoreTimeCode.push_back(tcPointer);
+			//StoreTimeCode.push_back(tcPointer);
 			
 
 		}else if(inputChar == 'q'){
 			runing = false;
 
-			for(vector<DryingSnapShot>::size_type i=0; i<StoreTimeCode.size();i++){
-				delete StoreTimeCode.at(i);
-			}
-			break;
+			//for(vector<DryingSnapShot>::size_type i=0; i<StoreTimeCode.size();i++){
+				//delete StoreTimeCode.at(i);
+			//}
+			//break;
 
 
 		
@@ -192,10 +192,10 @@ int main(){
 			
 			for(vector<DryingSnapShot>::size_type i=0; i<toStore.size();i++){
 				long long int currRemain = get_time_remaining(toStore.at(i));
-				toStore.at(i).timeToDry = StoreTimeCode.at(i);
-					if(toStore.at(i).timeToDry<=0){
-					delete StoreTimeCode.at(i);
-					}
+				//toStore.at(i).timeToDry = StoreTimeCode.at(i);
+					//if(toStore.at(i).timeToDry<=0){
+					//delete StoreTimeCode.at(i);
+					//}
 					if(currRemain>=0){
 					unsigned long long int time = floor(currRemain);
 					int h = time/3600;
@@ -231,6 +231,11 @@ int main(){
 
 
 		}
+	}
+	while(toStore.size()!=0){
+		int i = toStore.size()-1;
+		delete toStore.at(i).timeToDry;
+		toStore.pop_back();
 	}
 
 	return 0;
