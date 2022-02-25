@@ -195,16 +195,19 @@ int main(){
 					if(toStore.at(i).timeToDry<=0){
 					delete StoreTimeCode.at(i);
 					}
+					if(currRemain>=0){
 					unsigned long long int time = floor(currRemain);
 					int h = time/3600;
 					int m = time % 3600/60;
 					int s = time % 60;
 					TimeCode tc =TimeCode(h,m,s);
+					
 
 				
 				cout<< drying_snap_shot_to_string(toStore.at(i))<<  tc.ToString()  <<endl;
 				
 				count++;
+						
 					
 
 			}
@@ -220,11 +223,6 @@ int main(){
 			
 
 
-	}
-	while(StoreTimeCode.size()!=0){
-		int i = int(StoreTimeCode.size()-1);
-		delete StoreTimeCode.at(i);
-		toStore.pop_back();
 	}
 
 	return 0;
