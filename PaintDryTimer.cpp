@@ -185,7 +185,8 @@ int main(){
 
 		
 
-		}else if (inputChar == 'v'){
+		}
+		else if (inputChar == 'v'){
 
 			int count =0;
 			
@@ -210,12 +211,14 @@ int main(){
 						
 					
 
-			}
-			cout << count <<"items  being tracked"<<endl;
+			
+				cout << count <<"items  being tracked"<<endl;
+				}
 
 			
 			//long long int remainTime = get_time_remaining(newdss);
-		}
+			}
+		
 
 				
 				
@@ -223,7 +226,8 @@ int main(){
 			
 
 
+		}
 	}
 
 	return 0;
-}
+}	
