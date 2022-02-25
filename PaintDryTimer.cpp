@@ -177,7 +177,7 @@ int main(){
 		}else if(inputChar == 'q'){
 			runing = false;
 
-			for(vector<DryingSnapShot>::size_type i=0; i<toStore.size();i++){
+			for(vector<DryingSnapShot>::size_type i=0; i<StoreTimeCode.size();i++){
 				delete StoreTimeCode.at(i);
 			}
 			break;
