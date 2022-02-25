@@ -178,6 +178,7 @@ int main(){
 			for(vector<DryingSnapShot>::size_type i=0; i<toStore.size();i++){
 				delete StoreTimeCode.at(i);
 			}
+			break;
 
 
 		
