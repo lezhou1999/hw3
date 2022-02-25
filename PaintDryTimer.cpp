@@ -159,21 +159,31 @@ int main(){
 			cout<<"radius: ";
 			cin>> inputRad;
 			sphereArea = get_sphere_sa(inputRad);
+			TimeCode *timePointer = compute_time_code(sphereArea);
+			TimeCode tc = *timePointer;
+			TimeCode *tcPointer = &tc;
+
+			tcPointer = new TimeCode(*timePointer);
+			*tcPointer = tc;
+
+
 			newdss.name = "Batch- " + std::to_string(batchName);
 			cout << newdss.name;
-			newdss.timeToDry = compute_time_code(sphereArea);
+			newdss.timeToDry = tcPointer;
+			
 			
 			cout<<" will dry in:" <<newdss.timeToDry->ToString()<<endl;
 
 			
 			toStore.push_back(newdss);
+			StoreTimeCode.push_back(tcPointer);
 			
 
 		}else if(inputChar == 'q'){
 			runing = false;
 
 			for(vector<DryingSnapShot>::size_type i=0; i<toStore.size();i++){
-				delete toStore.at(i).timeToDry;
+				delete StoreTimeCode.at(i);
 			}
 
 
