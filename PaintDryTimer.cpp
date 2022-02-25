@@ -210,6 +210,8 @@ int main(){
 				
 				count++;
 					}
+
+			}
 						
 					
 
@@ -220,7 +222,7 @@ int main(){
 
 			
 			//long long int remainTime = get_time_remaining(newdss);
-			}
+			
 			if(toStore.size()==0){
 				cout<< "0 items being trakced" <<endl;
 			}
