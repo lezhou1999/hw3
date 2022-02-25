@@ -48,8 +48,9 @@ long long get_time_remaining(DryingSnapShot dss){
 string drying_snap_shot_to_string(DryingSnapShot dss){
 
 	string a = " takes ";
+	TimeCode tc = *(dss.timeToDry);
 
-	string result = dss.name + a + dss.timeToDry->ToString() + "time remaining ";
+	string result = dss.name + a + tc.ToString() + "time remaining ";
 	// Replace with your code
 	return result;
 }
@@ -190,7 +191,9 @@ int main(){
 			
 			for(vector<DryingSnapShot>::size_type i=0; i<toStore.size();i++){
 				long long int currRemain = get_time_remaining(toStore.at(i));
-					if(currRemain >=0){
+				toStore.at(i).timeToDry = StoreTimeCode.at(i);
+					if(toStore.at(i).timeToDry<=0){
+					delete StoreTimeCode.at(i);
 					unsigned long long int time = floor(currRemain);
 					int h = time/3600;
 					int m = time % 3600/60;
