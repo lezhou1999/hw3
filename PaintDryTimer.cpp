@@ -194,6 +194,7 @@ int main(){
 				toStore.at(i).timeToDry = StoreTimeCode.at(i);
 					if(toStore.at(i).timeToDry<=0){
 					delete StoreTimeCode.at(i);
+					}
 					unsigned long long int time = floor(currRemain);
 					int h = time/3600;
 					int m = time % 3600/60;
@@ -204,7 +205,7 @@ int main(){
 				cout<< drying_snap_shot_to_string(toStore.at(i))<<  tc.ToString()  <<endl;
 				
 				count++;
-					}
+					
 
 			}
 			cout << count <<"items  being tracked"<<endl;
