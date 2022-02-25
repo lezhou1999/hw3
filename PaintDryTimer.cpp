@@ -161,15 +161,16 @@ int main(){
 			cout<<"radius: ";
 			cin>> inputRad;
 			sphereArea = get_sphere_sa(inputRad);
-			TimeCode *timePointer = compute_time_code(sphereArea);
-			TimeCode tc = *timePointer;
-			TimeCode *tcPointer = &tc;
-			tcPointer = new TimeCode(*timePointer);
-			*tcPointer = tc;
+			//TimeCode *timePointer = compute_time_code(sphereArea);
+			//TimeCode tc = *timePointer;
+			//TimeCode *tcPointer = &tc;
+			//tcPointer = new TimeCode(*timePointer);
+			//*tcPointer = tc;
+			TimeCode *tc = compute_time_code(sphereArea);
 			newdss.name = "Batch- " + std::to_string(batchName);
 			cout << newdss.name;
-			newdss.timeToDry = tcPointer;
-			cout<<" will dry in:" <<tc.ToString()<<endl;			
+			newdss.timeToDry = tc;
+			cout<<" will dry in:" <<newdss.timeToDry ->ToString()<<endl;			
 			toStore.push_back(newdss);
 			//StoreTimeCode.push_back(tcPointer);
 			
