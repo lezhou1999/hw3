@@ -137,6 +137,7 @@ int main(){
 			if(currentTime<=0){
 
 			toStore.erase(toStore.begin()+i);
+			StoreTimeCode.erase(StoreTimeCode.begin()+i);
 			
 
 			}
