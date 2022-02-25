@@ -221,9 +221,9 @@ int main(){
 
 
 	}
-	while(toStore.size()!=0){
-		int i = int(toStore.size()-1);
-		delete toStore.at(i).timeToDry;
+	while(StoreTimeCode.size()!=0){
+		int i = int(StoreTimeCode.size()-1);
+		delete StoreTimeCode.at(i);
 		toStore.pop_back();
 	}
 
